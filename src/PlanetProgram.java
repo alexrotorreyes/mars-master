@@ -174,14 +174,12 @@ public class PlanetProgram extends JFrame {
 		btnWoman = new JButton("");
 		btnWoman.setBounds(662, 0, 68, 61);
 		optionsPane.add(btnWoman);
-		
 		btnWoman.setIcon(womanIcon);
 		
 		btnLion = new JButton("");
 		lionIcon = new ImageIcon(this.getClass().getResource("Lion.png"));
 		btnLion.setIcon(lionIcon);
 		btnLion.setBounds(771, 0, 68, 61);
-		
 		optionsPane.add(btnLion);
 		
 		btnCow = new JButton("");
@@ -206,10 +204,14 @@ public class PlanetProgram extends JFrame {
 				btnLion.setEnabled(true);
 				btnCow.setEnabled(true);
 				btnGrain.setEnabled(true);
+				contentPane.repaint();
+				contentPane.revalidate();
 			}
 		});
 		btnEnter.setBounds(249, 17, 61, 23);
 		optionsPane.add(btnEnter);
+		
+		numberCmb.setSelectedItem("");
 		
 		btnMan.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -224,9 +226,12 @@ public class PlanetProgram extends JFrame {
 					manEarthLbl.setVisible(true);
 					manMarsLbl.setVisible(false);
 				}
-				System.out.println("BEFORE IF");
+				
+				System.out.println("selected item is: " + numberCmb.getSelectedItem());
+				
 				if (numberCmb.getSelectedItem().equals(1))
 				{
+					System.out.println("DID IT ENTER??");
 					System.out.println("yes");
 					btnWoman.setEnabled(false);
 					btnLion.setEnabled(false);
@@ -235,16 +240,29 @@ public class PlanetProgram extends JFrame {
 				}
 				else if (numberCmb.getSelectedItem().equals(2))
 				{
+					ctr=0;
+					
 					while(ctr<2)
-					{	btnWoman.setEnabled(true);
+					{	
+						ctr++;
+						System.out.println("entered boooooger equals(2) ctr: " + ctr);
+						btnWoman.setEnabled(true);
 						btnLion.setEnabled(true);
 						btnCow.setEnabled(true);
 						btnGrain.setEnabled(true);
-						ctr++;
+						
+						if (ctr==3)
+						{	
+							System.out.println("entered if loop! ctr is: " + ctr);
+							btnWoman.setEnabled(false);
+							btnLion.setEnabled(false);
+							btnCow.setEnabled(false);
+							btnGrain.setEnabled(false);
+						}
 					}
 				}
+
 				ctr=0;
-				
 			}
 		});
 		
@@ -263,7 +281,6 @@ public class PlanetProgram extends JFrame {
 				
 				if (numberCmb.getSelectedItem().equals(1))
 				{
-					System.out.println("yes");
 					btnMan.setEnabled(false);
 					btnLion.setEnabled(false);
 					btnCow.setEnabled(false);
@@ -271,13 +288,26 @@ public class PlanetProgram extends JFrame {
 				}
 				else if (numberCmb.getSelectedItem().equals(2))
 				{
+					ctr=0;
 					while(ctr<2)
-					{	btnMan.setEnabled(true);
+					{	
+						ctr++;
+						System.out.println("woman ctr: " + ctr);
+						btnMan.setEnabled(true);
 						btnLion.setEnabled(true);
 						btnCow.setEnabled(true);
 						btnGrain.setEnabled(true);
-						ctr++;
 					}
+					
+					if (ctr==2)
+					{	
+						System.out.println("final woman ctr: " + ctr);
+						btnMan.setEnabled(false);
+						btnLion.setEnabled(false);
+						btnCow.setEnabled(false);
+						btnGrain.setEnabled(false);
+					}
+					ctr=0;
 				}
 				ctr=0;
 			}
@@ -295,6 +325,36 @@ public class PlanetProgram extends JFrame {
 					lionEarthLbl.setVisible(true);
 					lionMarsLbl.setVisible(false);
 				}
+				
+				if (numberCmb.getSelectedItem().equals(1))
+				{
+					System.out.println("yes");
+					btnMan.setEnabled(false);
+					btnWoman.setEnabled(false);
+					btnCow.setEnabled(false);
+					btnGrain.setEnabled(false);
+				}
+				else if (numberCmb.getSelectedItem().equals(2))
+				{
+					ctr=0;
+					while(ctr<2)
+					{	
+						ctr++;
+						System.out.println("lion ctr: " + ctr);
+						btnMan.setEnabled(true);
+						btnWoman.setEnabled(true);
+						btnCow.setEnabled(true);
+						btnGrain.setEnabled(true);
+		
+						if (ctr==2)
+						{	btnMan.setEnabled(false);
+							btnWoman.setEnabled(false);
+							btnCow.setEnabled(false);
+							btnGrain.setEnabled(false);
+						}
+					}
+				}
+				ctr=0;
 			}
 		});
 		
@@ -309,6 +369,36 @@ public class PlanetProgram extends JFrame {
 				{
 					cowEarthLbl.setVisible(true);
 					cowMarsLbl.setVisible(false);
+				}
+				
+				if (numberCmb.getSelectedItem().equals(1))
+				{
+					System.out.println("yes");
+					btnMan.setEnabled(false);
+					btnLion.setEnabled(false);
+					btnWoman.setEnabled(false);
+					btnGrain.setEnabled(false);
+				}
+				else if (numberCmb.getSelectedItem().equals(2))
+				{
+					ctr=0;
+					while(ctr<2)
+					{	
+						btnMan.setEnabled(true);
+						btnLion.setEnabled(true);
+						btnWoman.setEnabled(true);
+						btnGrain.setEnabled(true);
+						ctr++;
+					}
+					
+					if (ctr==2)
+					{	btnMan.setEnabled(false);
+						btnLion.setEnabled(false);
+						btnWoman.setEnabled(false);
+						btnGrain.setEnabled(false);
+					}
+					
+					ctr=0;
 				}
 			}
 		});
@@ -325,6 +415,37 @@ public class PlanetProgram extends JFrame {
 				{
 					grainEarthLbl.setVisible(true);
 					grainMarsLbl.setVisible(false);
+				}
+				
+				if (numberCmb.getSelectedItem().equals(1))
+				{
+					System.out.println("yes");
+					btnMan.setEnabled(false);
+					btnLion.setEnabled(false);
+					btnCow.setEnabled(false);
+					btnWoman.setEnabled(false);
+				}
+				else if (numberCmb.getSelectedItem().equals(2))
+				{
+					ctr=0;
+					while(ctr<2)
+					{	
+						btnMan.setEnabled(true);
+						btnLion.setEnabled(true);
+						btnCow.setEnabled(true);
+						btnWoman.setEnabled(true);
+						ctr++;
+					}
+					
+					System.out.println("ctr grain: " + ctr);
+					if (ctr==2)
+					{	btnMan.setEnabled(false);
+						btnLion.setEnabled(false);
+						btnCow.setEnabled(false);
+						btnWoman.setEnabled(false);
+					}
+					
+					ctr=0;
 				}
 			}
 		});
