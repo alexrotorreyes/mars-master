@@ -201,6 +201,11 @@ public class PlanetProgram extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				number = (Integer) numberCmb.getSelectedItem();
 				System.out.println("number is: " + number);
+				btnMan.setEnabled(true);
+				btnWoman.setEnabled(true);
+				btnLion.setEnabled(true);
+				btnCow.setEnabled(true);
+				btnGrain.setEnabled(true);
 			}
 		});
 		btnEnter.setBounds(249, 17, 61, 23);
@@ -325,10 +330,6 @@ public class PlanetProgram extends JFrame {
 		});
 		
 		System.out.println("selected item: " + numberCmb.getSelectedItem());
-		
-		
-		
-		
 		
 	}
 }
